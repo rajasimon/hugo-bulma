@@ -1,0 +1,39 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile is-centered">
+      <div class="column is-12-mobile is-10-tablet is-10-desktop is-8-widescreen is-6-fullhd">
+        <h1 class="title" style="margin-bottom: 0px;">{{ .Title }}</h1>
+        <p class="is-size-6">Published {{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}</p>
+        <br>
+        <div class="subtitle">{{ .Description }}</div>
+        <hr>
+        <div class="content">
+          {{ .Content }}
+        </div>
+        <hr>
+        <div class="columns is-mobile is-multiline">
+          <div class="column is-full-mobile">
+            {{ with .PrevInSection }}
+              <a href="{{ .Permalink }}">
+                <h1 class="title has-text-black-bis is-size-5">
+                  ← {{ .Title  }}
+                </h1>
+              </a>
+            {{ end }}
+          </div>
+          <div class="column is-full-mobile">
+            {{ with .NextInSection }}
+              <a href="{{ .Permalink }}">
+                <h1 class="title has-text-black-bis is-size-5">
+                {{ .Title | truncate 40 }} →
+                </h1>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

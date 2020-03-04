@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="{{ if .IsPage }}{{ .Page.Title }} - Raja Simon{{ else }}Raja Simon — I write all things about Python web.{{ end }}">
+    <meta name="description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}Hi, I'm Raja Simon, a software developer. This is my personal site; I write about Python web application development. Mostly Django and Flask and other web frameworks tutorials.{{ end }}">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ if .IsPage }}https://rajasimon.io{{ .RelPermalink }}{{ else }}https://rajasimon.io{{ end }}">
+    <meta property="og:title" content="{{ if .IsPage }}{{ .Page.Title }}{{ else }}Raja Simon — I write all things about Python web{{ end }}">
+    <meta property="og:description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}Hi, I'm Raja Simon, a software developer. This is my personal site; I write about Python web application development. Mostly Django and Flask and other web frameworks tutorials.{{ end }}">
+    <meta property="og:image" content="https://rajasimon.io/images/android-chrome-512x512.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="{{ if .IsPage }}https://rajasimon.io{{ .RelPermalink }}{{ else }}https://rajasimon.io{{ end }}">
+    <meta property="twitter:title" content="{{ if .IsPage }}{{ .Page.Title }}{{ else }}Raja Simon — I write all things about Python web{{ end }}">
+    <meta property="twitter:description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}Hi, I'm Raja Simon, a software developer. This is my personal site; I write about Python web application development. Mostly Django and Flask and other web frameworks tutorials.{{ end }}">
+    <meta property="twitter:image" content="https://rajasimon.io/images/android-chrome-512x512.png">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
+    <title>{{ .Page.Title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157573143-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-157573143-2');
+    </script>
+  </head>
+  <body>
+    {{ partial "navbar" }}
+    {{ block "main" . }}{{ end }}
+    {{ block "footer" . }}{{ end }}
+    {{ partial "footer" }}
+  </body>
+</html>
