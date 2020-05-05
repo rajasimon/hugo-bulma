@@ -5,26 +5,26 @@
     padding: 1rem 1rem
   }
   .custom-media:hover {
-    background-color: #F1F1F1;
+    background-color: #282c34;
   }
 </style>
-<section class="section">
+<section class="section has-background-dark">
   <div class="container">
     <div class="columns is-mobile is-multiline is-centered">
       {{ range .Pages }}
-        <div class="column is-12-mobile is-10-tablet is-10-desktop is-8-widescreen is-6-fullhd">
+        <div class="column is-12-mobile is-10-tablet is-10-desktop is-10-widescreen is-6-fullhd">
           <a href="{{ .RelPermalink }}">
             <article class="media custom-media" style="cursor: pointer;">
               <div class="media-content">
-                <h1 class="title is-size-4">
+                <h1 class="title is-size-4 has-text-white">
                 {{ .Title }}
                 </h1>
-                <p class="subtitle has-text-justified">
+                <p class="subtitle has-text-grey-light has-text-justified">
                   {{ .Description }}
                 </p>
               </div>
               <div class="media-right">
-                <p class="has-text-black">{{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}</p>
+                <p class="subtitle has-text-grey-light">{{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}</p>
                 <div class="tags is-pulled-right">
                   {{ range .Params.tags }}
                     <span class="tag is-primary is-medium">{{ . }}</span>

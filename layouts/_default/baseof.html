@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- Primary Meta Tags -->
     <meta name="title" content="{{ if .IsPage }}{{ .Page.Title }} - Raja Simon{{ else }}Raja Simon — I write all things about Python web.{{ end }}">
     <meta name="description" content="{{ if .IsPage }}{{ .Summary }}{{ else }}Hi, I'm Raja Simon, a software developer. This is my personal site; I write about Python web application development. Mostly Django and Flask and other web frameworks tutorials.{{ end }}">
@@ -28,7 +28,7 @@
 
     <title>{{ .Page.Title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157573143-2"></script>
     <script>
@@ -40,7 +40,7 @@
     </script>
   </head>
   <body>
-    {{ partial "navbar" }}
+    {{ partial "navbar" . }}
     {{ block "main" . }}{{ end }}
     {{ block "footer" . }}{{ end }}
     {{ partial "footer" }}
