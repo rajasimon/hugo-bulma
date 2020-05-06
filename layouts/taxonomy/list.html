@@ -1,18 +1,16 @@
 {{ define "main" }}
 <section class="section">
   <div class="container">
-    <div class="columns is-mobile is-multiline is-centered">
+    <div class="columns is-mobile is-multiline">
       {{ range .Pages }}
-        <div class="column is-12-mobile is-10-tablet is-10-desktop is-10-widescreen is-8-fullhd">
+        <div class="column is-12-mobile is-4-tablet is-4-desktop is-3-widescreen is-3-fullhd">
           <a href="{{ .RelPermalink }}">
-            <h1 class="title is-size-2">
-            {{ .Title }}
-            </h1>
+            <div class="box has-background-grey">
+              <h1 class="title has-text-white has-text-centered is-size-2">
+              {{ .Title }}
+              </h1>
+            </div>
           </a>
-          <p>{{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}</p>
-          <p>
-            {{ .Summary }}
-          </p>
         </div>
       {{ end }}
     </div>

@@ -3,16 +3,16 @@
 
 name = "hugo-bulma"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
+licenselink = "https://github.com/rajasimon/hugo-bulma/blob/master/LICENSE"
+description = "Inspired by ghost default theme and created using Bulma."
 homepage = "http://example.com/"
-tags = []
+tags = ["bulma", "ghost"]
 features = []
 min_version = "0.41"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Raja Simon"
+  homepage = "https://rajasimon.io"
 
 # If porting an existing theme
 [original]

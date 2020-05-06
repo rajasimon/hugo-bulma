@@ -1,0 +1,41 @@
+{{ define "main" }}
+<style>
+  .custom-media {
+    cursor: pointer;
+    padding: 1rem 1rem
+  }
+  .custom-media:hover {
+    background-color: #282c34;
+  }
+</style>
+<section class="section has-background-dark">
+  <div class="container">
+    <div class="columns is-mobile is-multiline is-centered">
+      {{ range .Pages }}
+        <div class="column is-12-mobile is-10-tablet is-10-desktop is-10-widescreen is-8-fullhd">
+          <a href="{{ .RelPermalink }}">
+            <article class="media custom-media" style="cursor: pointer;">
+              <div class="media-content">
+                <h1 class="title is-size-4 has-text-white">
+                {{ .Title }}
+                </h1>
+                <p class="subtitle has-text-grey-light has-text-justified">
+                  {{ .Description }}
+                </p>
+              </div>
+              <div class="media-right">
+                <p class="subtitle has-text-grey-light">{{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}</p>
+                <div class="tags is-pulled-right">
+                  {{ range .Params.tags }}
+                    <span class="tag is-primary is-medium">{{ . }}</span>
+                  {{ end }}
+                </div>
+              </div>
+            </article>
+          </a>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
