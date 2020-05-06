@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="has-background-dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,6 +28,18 @@
 
     <title>{{ .Page.Title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <!-- Custom css -->
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      #wrapper {
+        flex: 1;
+      }
+    </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157573143-2"></script>
@@ -39,10 +51,11 @@
       gtag('config', 'UA-157573143-2');
     </script>
   </head>
-  <body>
-    {{ partial "navbar" . }}
-    {{ block "main" . }}{{ end }}
-    {{ block "footer" . }}{{ end }}
-    {{ partial "footer" }}
+  <body class="has-background-dark">
+    <div id="wrapper">
+      {{ partial "navbar" . }}
+      {{ block "main" . }}{{ end }}
+    </div>
+    {{ partial "footer" . }}
   </body>
 </html>

@@ -25,18 +25,30 @@
           <div class="column is-full-mobile">
             {{ with .PrevInSection }}
               <a href="{{ .Permalink }}">
-                <h1 class="title has-text-white is-size-5">
-                  ← {{ .Title  }}
-                </h1>
+                <div class="box has-background-black">
+                  <article class="media">
+                    <div class="media-left has-text-white">←</div>
+                    <div class="media-content">
+                      <h1 class="title has-text-white is-size-5">{{ .Title | truncate 40 }}</h1>
+                      <div class="subtitle is-size-6 has-text-grey-light">{{ .Description | truncate 40 }}</div>
+                    </div>
+                  </article>
+                </div>
               </a>
             {{ end }}
           </div>
           <div class="column is-full-mobile">
             {{ with .NextInSection }}
               <a href="{{ .Permalink }}">
-                <h1 class="title has-text-white is-size-5">
-                {{ .Title | truncate 40 }} →
-                </h1>
+                <div class="box has-background-black">
+                  <article class="media">
+                    <div class="media-content">
+                      <h1 class="title has-text-white is-size-5">{{ .Title | truncate 40 }}</h1>
+                      <div class="subtitle is-size-6 has-text-grey-light">{{ .Description | truncate 40 }}</div>
+                    </div>
+                    <div class="media-right has-text-white">→</div>
+                  </article>
+                </div>
               </a>
             {{ end }}
           </div>
