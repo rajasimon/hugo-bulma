@@ -22,24 +22,20 @@
                 <p class="subtitle has-text-grey-light has-text-justified">
                   {{ .Description }}
                 </p>
-              </div>
-              <div class="media-right">
-                <p class="subtitle has-text-grey-light">{{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}</p>
-                <div class="tags is-pulled-right">
-                  {{ range $tag := .Params.tags }}
-                    {{ if eq $tag "python" }}
-                      <span class="tag is-medium" style="background-color: {{ $.Site.Params.python }}; color: #FFFFFF">{{ $tag }}</span>
-                    {{ else if eq $tag "django" }}
-                      <span class="tag is-medium" style="background-color: {{ $.Site.Params.django }}; color: #FFFFFF">{{ $tag }}</span>
-                    {{ else if eq $tag "sql" }}
-                      <span class="tag is-medium" style="background-color: {{ $.Site.Params.sql }}; color: #FFFFFF">{{ $tag }}</span>
-                    {{ else if eq $tag "google" }}
-                      <span class="tag is-medium" style="background-color: {{ $.Site.Params.google }}; color: #FFFFFF">{{ $tag }}</span>
-                    {{ else }}
-                      <span class="tag is-medium" style="background-color: #000000; color: #FFFFFF">{{ $tag }}</span>
-                    {{ end }}
-                  {{ end }}
+                <div class="is-hidden-desktop">
+                  <div class="columns is-mobile">
+                    <div class="column">
+                      <p class="subtitle has-text-grey-light">{{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}</p>
+                    </div>
+                    <div class="column">
+                      {{ partial "dateandtag" . }}
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="media-right is-hidden-touch">
+                <p class="subtitle has-text-grey-light">{{ dateFormat "2 Jan, 2006" (default .Date (.PublishDate)) }}</p>
+                {{ partial "dateandtag" . }}
               </div>
             </article>
           </a>
